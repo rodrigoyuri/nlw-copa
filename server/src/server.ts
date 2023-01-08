@@ -17,6 +17,10 @@ async function bootstrap() {
         origin: '*',
     })
 
+    await fastify.register(jwt, {
+        secret: ''
+    });
+
     await fastify.register(poolRoutes);
     await fastify.register(userRoutes);
     await fastify.register(guessRoutes);
